@@ -23,4 +23,9 @@ export class HeroesService {
   getSuggets(term: string): Observable<Heroe[]> {
     return this.http.get<Heroe[]>(`${this.baseUrl}/heroes?q=${term}&_limit=6`);
   }
+
+  addHero(hero: Heroe): Observable<Heroe>{
+
+    return this.http.post<Heroe>(`${this.baseUrl}/heroes`, hero);
+  }
 }
